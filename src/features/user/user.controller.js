@@ -31,8 +31,8 @@ export default class UserController{
       signIn = async (req, res, next) => {
             try {
                   const user = await this.userRepository.signinUser(req.body);
-                  const token = jwt.sign( // create jwt token for authentications
-                        {
+                  const token = jwt.sign( // create jwt token for authentications 
+                        { // this is the userPayload
                               userId: user._id,
                               email: user.email,
                         },
